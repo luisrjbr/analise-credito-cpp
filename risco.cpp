@@ -1,4 +1,5 @@
 #include "risco.h"
+#include <string>
 
 bool Risco::verificarPessoaComRisco(Pessoa& pessoa)
 {

@@ -7,12 +7,20 @@
 #include <cstring>
 #include <cstdint>
 
+enum class RendaMinimaMaxima
+{
+    RENDA_MINIMA = 1000, RENDA_MAXIMA = 10000
+};
+
+enum class IdadeMinimaMaxima
+{
+    IDADE_MINIMA = 18, IDADE_MAXIMA = 70
+};
+
+
 class Pessoa
 {
 public:
-    enum{RENDA_MINIMA = 1000, RENDA_MAXIMA = 10000};
-    enum {IDADE_MINIMA = 18, IDADE_MAXIMA = 70};
-
     Pessoa() = default;
     Pessoa(std::string cpf, double renda, short idade);
 
@@ -20,12 +28,12 @@ public:
 
     bool validarRenda() const
     {
-        return (m_renda >= RENDA_MINIMA) && (m_renda <= RENDA_MAXIMA);
+        return (m_renda >= static_cast<double>(RendaMinimaMaxima::RENDA_MINIMA)) && (m_renda <= static_cast<double>(RendaMinimaMaxima::RENDA_MAXIMA));
     }
 
     bool validarIdade() const
     {
-        return (m_idade >= IDADE_MINIMA) && (m_idade <= IDADE_MAXIMA);
+        return (m_idade >= static_cast<double>(IdadeMinimaMaxima::IDADE_MINIMA)) && (m_idade <= static_cast<double>(IdadeMinimaMaxima::IDADE_MAXIMA));
     }
 
     bool validarPessoa() const
@@ -33,7 +41,7 @@ public:
         return m_pessoavalida;
     }
 
-    const std::string obterCpf()
+    std::string obterCpf() const
     {
         return m_cpf;
     }

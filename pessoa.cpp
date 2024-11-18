@@ -1,17 +1,13 @@
 #include "pessoa.h"
+#include "ferramentas.h"
 
 Pessoa::Pessoa(std::string cpf, double renda, short idade) : m_cpf(cpf), m_renda(renda), m_idade(idade)
 {
-    m_cpf = cpf;
-    m_renda = renda;
-    m_idade = idade;
+    Ferramentas ferramentaConverteCPF;
 
-    //converte para validação da função de cpf que exige um ponteiro para cpf
-    char* cpfConvertidoChar = new char[cpf.length() + 1];
-    std::strcpy(cpfConvertidoChar, cpf.c_str());
-
-    m_pessoavalida = (validarCPF(cpfConvertidoChar) && validarRenda() && validarIdade());
-    delete[] cpfConvertidoChar;
+    m_pessoavalida = (validarCPF(ferramentaConverteCPF.converteCpfParaValidacao(cpf))
+                      && validarRenda()
+                      && validarIdade());
 }
 
 //https://gist.github.com/eduardoedson/8f991b6d234a9ebdcbe3

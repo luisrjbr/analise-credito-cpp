@@ -9,6 +9,8 @@ add_executable(analise-credito-cpp main.cpp
     pessoa.h pessoa.cpp
     analisecredito.h analisecredito.cpp
     risco.h risco.cpp
+    ferramentas.h ferramentas.cpp
+
 
 )
 

@@ -73,6 +73,12 @@ build CMakeFiles/analise-credito-cpp.dir/risco.cpp.o: CXX_COMPILER__analise-cred
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
 
+build CMakeFiles/analise-credito-cpp.dir/ferramentas.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/ferramentas.cpp || cmake_object_order_depends_target_analise-credito-cpp
+  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/ferramentas.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
+  OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target analise-credito-cpp
@@ -81,7 +87,7 @@ build CMakeFiles/analise-credito-cpp.dir/risco.cpp.o: CXX_COMPILER__analise-cred
 #############################################
 # Link the executable analise-credito-cpp
 
-build analise-credito-cpp: CXX_EXECUTABLE_LINKER__analise-credito-cpp_Debug CMakeFiles/analise-credito-cpp.dir/main.cpp.o CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o CMakeFiles/analise-credito-cpp.dir/analisecredito.cpp.o CMakeFiles/analise-credito-cpp.dir/risco.cpp.o
+build analise-credito-cpp: CXX_EXECUTABLE_LINKER__analise-credito-cpp_Debug CMakeFiles/analise-credito-cpp.dir/main.cpp.o CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o CMakeFiles/analise-credito-cpp.dir/analisecredito.cpp.o CMakeFiles/analise-credito-cpp.dir/risco.cpp.o CMakeFiles/analise-credito-cpp.dir/ferramentas.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   POST_BUILD = :
