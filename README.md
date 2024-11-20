@@ -5,14 +5,14 @@ O que é a concessão de crédito?
 
 A concessão de crédito é o procedimento no qual uma instituição libera um valor para uma pessoa física ou jurídica, para isso são avaliados vários critérios pelas instituições detentoras do crédito antes de liberá-las. Esse case trata da concessão de crédito para pessoa física.
 
-
 Passos para construção do módulo de Análise de Crédito:
 
-Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão CPF, Renda e Idade, com as seguintes regras:
-	- Garantir que todos os campos estejam preenchidos, evitando valores nulos ou vazios.
-	- CPF: deve ser válidado seguindo as regras de validação do CPF;
-	- Idade: deve ser maior que 18 e menor que 60;
-	- Renda: deve ser maior que 2000;
+Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão CPF, Renda e Idade e deve-se garantir que:
+	
+ 	- Todos os campos estejam preenchidos, evitando valores nulos ou vazios;
+	- O CPF deve ser válidado seguindo as regras de validação do CPF;
+	- A idade deve ser maior que 18 e menor que 70;
+	- A Renda deve ser maior que 2000;
         
 Passo 2: Consulta a Dados Internos e Externos do Usuário
     Consulta ao Histórico Interno do Banco com o CPF do usuário:
