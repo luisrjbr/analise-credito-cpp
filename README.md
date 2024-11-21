@@ -1,4 +1,7 @@
-# analise-credito-cpp
+# Análise de Crédito
+
+# Requisitos:
+
 Sistema criado com os exemplos dados no curso C++ MasterClass. Será criado um sistema de Análise de Crédito fictício, sendo os requisitos criados a partir de interações com o ChatGPT, sendo ele o analista de negócio. Para criação de um módulo de Análise de Crédito deve ser feito também um módulo de Análise de Fraude.
 
 O que é a concessão de crédito?
@@ -44,22 +47,21 @@ Passo 5: Aprovação ou Rejeição do Crédito
      	- Decisão de Aprovação de Crédito:
         	Com base no score de crédito e no limite proposto, decidir se o crédito deve ser aprovado automaticamente ou se deve ser encaminhado para análise manual. Sinalizar automaticamente perfis de 			alto risco de crédito e fraude para revisão humana.
 	
-#Casos de Uso:     
+# Casos de Uso:     
 
 Caso de Uso 1: Verificar Dados de Fraude do Usuário
 
     Nome do caso de uso: Verificar dados de fraude
     Objetivo: Validar dados do usuário para determinar risco de fraude antes da análise de crédito.
-    Resumo do caso de uso: A aplicação deve verificar dados do usuário em bases internas e externas e calcular um score de risco de fraude.
+    Resumo do caso de uso: A aplicação deve verificar dados do usuário em bases internas e externas, padrões e anomalias e calcular um score de risco de fraude.
     Atores: Usuário, Módulo de Prevenção a Fraudes
-    Precondições: O usuário já forneceu dados pessoais (nome, CPF, e-mail, nome da mãe, nome do pai).
+    Precondições: O usuário já forneceu dados pessoais (CPF, renda e idade) que já foram validados.
     Disparador: O usuário inicia uma solicitação de crédito.
     Sequência de ações primária:
-        A aplicação coleta os dados pessoais do usuário.
-        A aplicação envia os dados ao Módulo de Prevenção a Fraudes.
+        A aplicação coleta os dados pessoais do usuário e faz a validação do CPF, renda e idade.
+	A aplicação envia os dados ao Módulo de Prevenção a Fraudes.
         O Módulo de Prevenção a Fraudes consulta a base de dados interna do banco.
         O módulo consulta bases externas de dados antifraude (ex.: SPC, Serasa).
-        O módulo realiza validação dos dados (ex.: CPF, e-mail, consistência de nomes).
         O módulo calcula um score de risco de fraude.
         O módulo retorna o score de risco de fraude para a aplicação principal.
     Sequências de ações alternativas:
