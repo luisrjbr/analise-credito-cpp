@@ -2,7 +2,7 @@
 
 # Requisitos:
 
-Sistema criado com os exemplos dados no curso C++ MasterClass. Será criado um sistema de Análise de Crédito fictício, sendo os requisitos criados a partir de interações com o ChatGPT, sendo ele o analista de negócio. Para criação de um módulo de Análise de Crédito deve ser feito também um módulo de Análise de Fraude.
+Sistema criado com os exemplos dados no curso C++ MasterClass. Será criado um sistema de Análise de Crédito dado por uma instituição financeira fictícia, sendo os requisitos criados a partir de interações com o ChatGPT, sendo ele o analista de negócio. Para criação de um módulo de Análise de Crédito deve ser feito também um módulo de Análise de Fraude.
 
 O que é a concessão de crédito?
 
@@ -18,7 +18,7 @@ Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão C
         
 Passo 2: Consulta a Dados Internos e Externos do Usuário
     
-    	- Consulta ao Histórico Interno do Banco com o CPF do usuário:
+    	- Consulta ao Histórico Interno da Instituição Financeira com o CPF do usuário:
         	Identificar se o usuário possui histórico de crédito ou contas no banco e analisar informações anteriores. Checar informações como histórico de pagamento, eventuais atrasos e produtos 			bancários contratados (ex.: cartões de crédito, financiamentos). Deve ser retornado se o cliente tem alguma inadimplência nos produtos contratados. 
 
     	- Consulta a Bases Externas de Crédito com o CPF do usuário:
