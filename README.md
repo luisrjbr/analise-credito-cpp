@@ -19,19 +19,22 @@ Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão C
 Passo 2: Consulta a Dados Internos e Externos do Usuário
     
     	- Consulta ao Histórico Interno da Instituição Financeira com o CPF do usuário:
-        	Identificar se o usuário possui histórico de crédito ou contas no banco e analisar informações anteriores. Checar informações como histórico de pagamento, eventuais atrasos e produtos 			bancários contratados (ex.: cartões de crédito, financiamentos). Deve ser retornado se o cliente tem alguma inadimplência nos produtos contratados. 
-
-    	- Consulta a Bases Externas de Crédito com o CPF do usuário:
-        	Conectar-se a bureaus de crédito (ex.: Serasa, SPC) para consultar o score externo e outras informações relevantes do histórico de crédito do usuário. Verificar registros de inadimplência, 			protestos e outras pendências financeiras.
+        	Identificar se o usuário possui histórico de crédito ou contas no banco e analisar informações anteriores. 
+	 	Checar informações como histórico de pagamento, eventuais atrasos e produtos bancários contratados
+   		(ex.: cartões de crédito, financiamentos). 
+     		Deve ser retornado se o cliente tem alguma inadimplência nos produtos contratados. 
 
 Passo 3: Análise de Fraudes (Padrões e Anomalias)
 
     	- Verificação de Padrões Conhecidos de Fraudes:
-        	Solicitações usando o mesmo CPF, mas informando renda e idades diferentes.
+        	Uma solicitação usando o mesmo CPF, mas informando renda e idades diferentes em requisições 
+	 	para análise de crédito deve ser entendida como uma fraude.
 
 Passo 4: Avaliação de Risco de Crédito e Fraude
 
-     	- Geração de Score de Risco de Crédito. Calcular um score de risco de crédito que considere os dados internos e externos consultados no passo 2 e 3. Atribuir um nível de risco ao usuário com base 	nesse score (“Baixo”, “Médio” ou “Alto”). As seguintes regras devem ser respeitadas:
+     	- Geração de Score de Risco de Crédito. Calcular um score de risco de crédito que considere os dados internos e externos
+      retornados passo 2 e 3. Atribuir um nível de risco ao usuário com base nesse score (“Baixo”, “Médio” ou “Alto”). 
+      As seguintes regras devem ser respeitadas:
 	
  	Se tiver inadimplência banco o crédito deve ser negado e enviado para verificação manual.
  	
@@ -45,7 +48,8 @@ Passo 4: Avaliação de Risco de Crédito e Fraude
 Passo 5: Aprovação ou Rejeição do Crédito
 
     	- Cálculo de Limite de Crédito Inicial:
-        	Com base no score de risco, definir um limite de crédito inicial. Ajustar o limite de crédito conforme a análise de risco; usuários com score de crédito alto recebem um limite 			maior, enquanto usuários com score baixo recebem um limite menor.
+        	Com base no score de risco, definir um limite de crédito inicial. Ajustar o limite de crédito conforme a análise de 
+	 	risco com usuários com score de crédito alto recebem um limite maior, enquanto usuários com score baixo recebem um limite menor.
 
           	Risco	Limite de Crédito	
         	"Alto"	2000
