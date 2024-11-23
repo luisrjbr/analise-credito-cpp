@@ -27,25 +27,30 @@ Passo 2: Consulta a Dados Internos e Externos do Usuário
 Passo 3: Análise de Fraudes (Padrões e Anomalias)
 
     	- Verificação de Padrões Conhecidos de Fraudes:
-        	Solicitações usando o mesmo CPF, mas informando nomes e idades diferentes.
+        	Solicitações usando o mesmo CPF, mas informando renda e idades diferentes.
 
 Passo 4: Avaliação de Risco de Crédito e Fraude
 
-     	- Geração de Score de Risco de Crédito. Calcular um score de risco de crédito que considere os dados internos e externos consultados no passo 2 e 3. Atribuir um nível de risco ao usuário com base 		nesse score (“Baixo”, “Médio” ou “Alto”).
-
-        	Idade		Renda		Score	Risco
-        	>=18 <=30	>2000 <=10000	4	"Alto"
-        	>=18 <=30	>10000		2	"Medio"
-        	>30 <=60 	>2000 <=10000	3	"Medio"
-        	>30 <=60	>10000		1	"Baixo"	
+     	- Geração de Score de Risco de Crédito. Calcular um score de risco de crédito que considere os dados internos e externos consultados no passo 2 e 3. Atribuir um nível de risco ao usuário com base 	nesse score (“Baixo”, “Médio” ou “Alto”). As seguintes regras devem ser respeitadas:
+	
+ 	Se tiver inadimplência banco o crédito deve ser negado e enviado para verificação manual.
+ 	
+  	Se não tiver inadimplência banco e tendo ou não inadimplência externa, verificar a tabela abaixo:
+        	Idade		Renda		Score de Risco
+        	>=18 <=30	>2000 <=10000	"Alto"
+        	>=18 <=30	>10000		"Medio"
+        	>30 <=60 	>2000 <=10000	"Medio"
+        	>30 <=60	>10000		"Baixo"	
 
 Passo 5: Aprovação ou Rejeição do Crédito
 
     	- Cálculo de Limite de Crédito Inicial:
-        	Com base no score de risco de crédito, definir um limite de crédito inicial. Ajustar o limite de crédito conforme a análise de risco; usuários com score de crédito alto recebem um limite 			maior, enquanto usuários com score baixo recebem um limite menor.
+        	Com base no score de risco, definir um limite de crédito inicial. Ajustar o limite de crédito conforme a análise de risco; usuários com score de crédito alto recebem um limite 			maior, enquanto usuários com score baixo recebem um limite menor.
 
-     	- Decisão de Aprovação de Crédito:
-        	Com base no score de crédito e no limite proposto, decidir se o crédito deve ser aprovado automaticamente ou se deve ser encaminhado para análise manual. Sinalizar automaticamente perfis de 			alto risco de crédito e fraude para revisão humana.
+          	Risco	Limite de Crédito	
+        	"Alto"	2000
+        	"Medio"	4000
+        	"Baixo"	6000		
 	
 # Casos de Uso:     
 
@@ -60,15 +65,15 @@ Caso de Uso 1: Verificar Dados de Fraude do Usuário
     Sequência de ações primária:
         A aplicação coleta os dados pessoais do usuário e faz a validação do CPF, renda e idade.
 	A aplicação envia os dados ao Módulo de Prevenção a Fraudes.
-        O Módulo de Prevenção a Fraudes consulta a base de dados interna do banco.
-        O módulo consulta bases externas de dados antifraude (ex.: SPC, Serasa).
-        O módulo calcula um score de risco de fraude.
-        O módulo retorna o score de risco de fraude para a aplicação principal.
+        O Módulo de Prevenção a Fraudes consulta bases externas de dados antifraude (ex.: SPC, Serasa).
+	O Módulo de Prevenção a Fraudes verifica uma padrão conhecido de fraude, verificando se um cpf já foi informado com renda e idades diferentes.
+        O Módulo de Prevenção a Fraudes calcula um score de risco de fraude.
+        O Módulo de Prevenção a Fraudes retorna o score de risco de fraude para a aplicação principal.
     Sequências de ações alternativas:
         Caso dados inválidos sejam detectados: A aplicação solicita ao usuário que corrija os dados e inicie a verificação novamente.
         Caso o usuário seja classificado como alto risco de fraude: A aplicação bloqueia a análise de crédito e envia o caso para revisão manual.
     Pós-condições: O sistema possui um score de risco de fraude para o usuário, e a análise de crédito pode ser continuada ou bloqueada.
-    Requisitos não funcionais: A verificação de fraude deve ocorrer em tempo real; o tempo de resposta deve ser inferior a 5 segundos.
+    Requisitos não funcionais: A verificação de fraude deve ocorrer em tempo real; o tempo de resposta deve ser inferior a 1 segundo.
     Glossário:
         Score de risco de fraude: Pontuação que indica a probabilidade de o usuário estar associado a atividades fraudulentas.
 	
@@ -80,20 +85,17 @@ Caso de Uso 2: Realizar Análise de Crédito do Usuário
     Resumo do caso de uso: A aplicação utiliza os dados pessoais e históricos do usuário para calcular um score de crédito e definir condições de crédito.
     Atores: Usuário, Módulo de Análise de Crédito, Módulo de Prevenção a Fraudes
     Precondições: O usuário passou pela verificação de fraude, e o score de risco de fraude está disponível.
-    Disparador: O usuário solicita crédito após passar pela verificação de fraude.
+    Disparador: O crédito é fornecido após passar pela verificação de fraude.
     Sequência de ações primária:
         A aplicação inicia o processo de análise de crédito.
-        A aplicação consulta o histórico de crédito do usuário na base de dados interna do banco.
-        A aplicação verifica o score de crédito do usuário em bureaus de crédito externos (ex.: SPC, Serasa).
-        A aplicação calcula o score de crédito com base no histórico e nos dados demográficos.
-        A aplicação calcula o limite de crédito inicial com base no score e na capacidade de pagamento.
-        A aplicação define condições de crédito (ex.: taxa de juros, prazo).
-        A aplicação envia a proposta ao usuário.
+        O Módulo de Análise de Crédito consulta o histórico de crédito do usuário na base de dados interna do banco.
+        O Módulo de Análise de Crédito consulta o score produzido pelo Módulo de Prevenção a Fraudes. 
+	Com base no score de risco calcular o limite de crédito
+        Enviar a proposta ao usuário.
     Sequências de ações alternativas:
-        Caso o score de risco de fraude seja alto: O sistema suspende a análise de crédito e encaminha o caso para uma revisão manual.
-        Caso o usuário tenha histórico de inadimplência: O sistema reduz o limite de crédito e ajusta a taxa de juros.
-    Pós-condições: A análise de crédito está completa, e o usuário recebe uma resposta de aprovação, rejeição ou pendência para análise manual.
-    Requisitos não funcionais: A análise de crédito deve ser rápida, com tempo de resposta abaixo de 10 segundos.
+        Caso o usuário tenha histórico de inadimplência: sistema suspende a análise de crédito e encaminha o caso para uma revisão manual.
+    Pós-condições: A análise de crédito está completa, e o usuário recebe uma resposta de aprovação ou rejeição.
+    Requisitos não funcionais: A análise de crédito deve ser rápida, com tempo de resposta abaixo de 2 segundos.
     Glossário:
         Score de crédito: Pontuação que indica a probabilidade de o usuário cumprir com as obrigações financeiras.
         Limite de crédito inicial: Valor de crédito aprovado inicialmente para o usuário.
