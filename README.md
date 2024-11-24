@@ -19,26 +19,23 @@ Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão C
 Passo 2: Consulta a Dados Internos e Externos do Usuário
     
     	- Consulta ao Histórico Interno da Instituição Financeira com o CPF do usuário:
-        	Identificar se o usuário possui histórico de crédito ou contas no banco e analisar informações anteriores. 
-	 	Checar informações como histórico de pagamento, eventuais atrasos e produtos bancários contratados
-   		(ex.: cartões de crédito, financiamentos). 
-     		Deve ser retornado se o cliente tem alguma inadimplência nos produtos contratados. 
+       	Identificar se o usuário possui histórico de crédito ou contas no banco e analisar informações anteriores. 
+ 	Checar informações como histórico de pagamento, eventuais atrasos e produtos bancários contratados
+	(ex.: cartões de crédito, financiamentos). Deve ser retornado se o cliente tem alguma inadimplência nos produtos contratados. 
 
 Passo 3: Análise de Fraudes (Padrões e Anomalias)
 
     	- Verificação de Padrões Conhecidos de Fraudes:
-        	Uma solicitação usando o mesmo CPF, mas informando renda e idades diferentes em requisições 
-	 	para análise de crédito deve ser entendida como uma fraude.
+        Uma solicitação usando o mesmo CPF, mas informando renda e idades diferentes em requisições 
+	para análise de crédito deve ser entendida como uma fraude.
 
 Passo 4: Avaliação de Risco de Crédito e Fraude
 
-     	- Geração de Score de Risco de Crédito. Calcular um score de risco de crédito que considere os dados internos e externos
-      retornados passo 2 e 3. Atribuir um nível de risco ao usuário com base nesse score (“Baixo”, “Médio” ou “Alto”). 
-      As seguintes regras devem ser respeitadas:
+     	- Geração de Score de Risco de Crédito. Calcular um score de risco de crédito que considere os dados retornados nos passos 2 e 3.
+      Esse score é um nível de risco com as seguintes definições: “Baixo”, “Médio” ou “Alto”. As seguintes regras devem ser respeitadas:
 	
- 	Se tiver inadimplência banco o crédito deve ser negado e enviado para verificação manual.
- 	
-  	Se não tiver inadimplência banco e tendo ou não inadimplência externa, verificar a tabela abaixo:
+ 	1 - Se tiver inadimplência (passo 2) ou alguma fraude o crédito deve ser negado e enviado para verificação manual.
+  	2 - Se não tiver inadimplência  e tendo ou não inadimplência externa, verificar a tabela abaixo:
         	Idade		Renda		Score de Risco
         	>=18 <=30	>2000 <=10000	"Alto"
         	>=18 <=30	>10000		"Medio"
