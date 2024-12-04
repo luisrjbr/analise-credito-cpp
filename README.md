@@ -58,16 +58,16 @@ Caso de Uso 1: Verificar Dados de Fraude do Usuário
     Precondições: O usuário já forneceu dados pessoais (CPF, renda e idade) que já foram validados.
     Disparador: O usuário inicia uma solicitação de crédito.
     Sequência de ações primária:
-        A aplicação coleta os dados pessoais do usuário e faz a validação do CPF, renda e idade.
-	A aplicação envia os dados ao Módulo de Prevenção a Fraudes.
-        O Módulo de Prevenção a Fraudes verifica padrão conhecido de fraude em que diferentes requisições com os mesmos dados deve ser entendida como uma fraude.
-        O Módulo de Prevenção a Fraudes retorna se é uma fraude ou não.
+		A aplicação coleta os dados pessoais do usuário e faz a validação do CPF, renda e idade.
+ 		A aplicação envia os dados ao Módulo de Prevenção a Fraudes.
+		O Módulo de Prevenção a Fraudes verifica padrão conhecido de fraude em que diferentes requisições com os mesmos dados deve ser entendida como uma fraude.
+		O Módulo de Prevenção a Fraudes retorna se é uma fraude ou não.
     Sequências de ações alternativas:
-        Caso dados inválidos sejam detectados: A aplicação solicita ao usuário que corrija os dados e inicie a verificação novamente.
+		Caso dados inválidos sejam detectados: A aplicação solicita ao usuário que corrija os dados e inicie a verificação novamente.
     Pós-condições: O sistema retorna o risco de fraude e a análise de crédito pode ser continuada ou bloqueada.
     Requisitos não funcionais: A verificação de fraude deve ocorrer em tempo real; o tempo de resposta deve ser inferior a 1 segundo.
     Glossário:
-        Risco de fraude: Probabilidade do usuário estar associado a atividades fraudulentas.
+		Risco de fraude: Probabilidade do usuário estar associado a atividades fraudulentas.
 	
 
 Caso de Uso 2: Realizar Análise de Crédito do Usuário
@@ -79,15 +79,15 @@ Caso de Uso 2: Realizar Análise de Crédito do Usuário
     Precondições: O usuário passou pela verificação de fraude, e o score de risco de crédito está disponível.
     Disparador: O crédito é fornecido após passar pela verificação de fraude.
     Sequência de ações primária:
-        A aplicação inicia o processo de análise de crédito.
-	Verifica se o usuário não tem fraude.
-	Verifica se o usuário tem produto bancário e a renda aumentou 
- 	Com base no score de risco define o limite de crédito
-        Enviar a proposta ao usuário.
+		A aplicação inicia o processo de análise de crédito.
+		Verifica se o usuário não tem fraude.
+		Verifica se o usuário tem produto bancário e a renda aumentou 
+ 		Com base no score de risco define o limite de crédito
+		Enviar a proposta ao usuário.
     Sequências de ações alternativas:
-        Caso o usuário não passe nos critérios de validação: sistema suspende a análise de crédito e encaminha o caso para uma revisão manual.
+        	Caso o usuário não passe nos critérios de validação: sistema suspende a análise de crédito e encaminha o caso para uma revisão manual.
     Pós-condições: A análise de crédito está completa, e o usuário recebe uma resposta de aprovação ou rejeição.
     Requisitos não funcionais: A análise de crédito deve ser rápida, com tempo de resposta abaixo de 2 segundos.
     Glossário:
-        Score de crédito: Pontuação que indica a probabilidade de o usuário cumprir com as obrigações financeiras.
-        Limite de crédito: Valor de crédito aprovado inicialmente para o usuário.
+        	Score de crédito: Pontuação que indica a probabilidade de o usuário cumprir com as obrigações financeiras.
+        	Limite de crédito: Valor de crédito aprovado inicialmente para o usuário.
