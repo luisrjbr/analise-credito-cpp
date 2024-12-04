@@ -12,16 +12,16 @@ Passos para construção do módulo de Análise de Crédito:
 
 Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão CPF, Renda e Idade
 
-	- O CPF deve ser válidado seguindo as regras de validação do CPF;
-	- A idade deve ser maior que 18 e menor que 60;
-	- A Renda deve ser maior que 2000;
+- O CPF deve ser válidado seguindo as regras de validação do CPF;
+- A idade deve ser maior que 18 e menor que 60;
+- A Renda deve ser maior que 2000;
         
 Passo 2: Consulta a Dados Internos e Externos do Usuário
     
-    	- Consulta ao Histórico Interno da Instituição Financeira com o CPF do usuário:
-       	Identificar se o usuário possui histórico de crédito ou contas no banco e analisar informações anteriores. 
- 	Checar informações como histórico de pagamento, eventuais atrasos e produtos bancários contratados
-	(ex.: cartões de crédito, financiamentos). Deve ser retornado se o cliente tem alguma inadimplência nos produtos contratados. 
+- Consulta ao Histórico Interno da Instituição Financeira com o CPF do usuário:
+Identificar se o usuário possui histórico de crédito ou contas no banco e analisar informações anteriores.
+Checar informações como histórico de pagamento, eventuais atrasos e produtos bancários contratados
+(ex.: cartões de crédito, financiamentos). Deve ser retornado se o cliente tem alguma inadimplência nos produtos contratados. 
 
 Passo 3: Análise de Fraudes (Padrões e Anomalias)
 
