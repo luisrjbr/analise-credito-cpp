@@ -18,9 +18,9 @@ Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão C
         
 Passo 2: Consultar Histórico Internos do Usuário na Instituição
     
-Identificar se o usuário possui histórico de crédito analisando informações anteriores.
-Com o cpf verificar se tem algum produto contratado anteriormente na instituição, com o cpf + renda verificar no histórico de renda aumentou.
-O único caso que ele deve ser aceito e se tem produto bancário e a renda aumentou. 
+Identificar se o usuário tem algum produto contratado anteriormente na instituição ainda vigente, com o cpf verificar se tem ou não o produto.
+A instituição só deseja conceder crédito a usuários que tenha algum produto contratado anteriormente. 
+Se tiver um produto pode seguir no fluxo.
 
 Passo 3: Verificar Padrão de Análise de Fraudes (Padrões e Anomalias)
 
