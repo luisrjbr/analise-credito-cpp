@@ -4,6 +4,11 @@
 #include<vector>
 #include "pessoa.h"
 
+enum class TipoDeRisco
+{
+    ALTO, MEDIO, BAIXO
+};
+
 class Risco
 {
 public:
@@ -11,6 +16,7 @@ public:
     std::vector<Pessoa> pessoasComRisco;
     bool verificarPessoaComRisco(Pessoa& pessoa);
     void listaPessoasComRisco();
+    TipoDeRisco calcularScoreRisco();
 
 private:
 

@@ -3,9 +3,7 @@
 
 Pessoa::Pessoa(std::string cpf, double renda, short idade) : m_cpf(cpf), m_renda(renda), m_idade(idade)
 {
-    Ferramentas ferramentaConverteCPF;
-
-    m_pessoavalida = (validarCPF(ferramentaConverteCPF.converteCpfParaValidacao(cpf))
+    m_pessoavalida = (validarCPF(Ferramentas::converteCpfParaValidacao(cpf))
                       && validarRenda()
                       && validarIdade());
 }

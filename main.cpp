@@ -10,7 +10,7 @@ int main()
     double input_renda;
     short input_idade;
 
-    std::cout << "*** ATENÇÂO: Regras para validação: CPF Válido, Renda entre R$ 1000,00 e R$ 10000,00 e idade entre 18 e 70 anos *** \n\n" << std::endl;
+    std::cout << "*** ATENÇÂO: Regras para validação: CPF Válido, Renda maior que R$ 2000,00 e idade entre 18 e 60 anos *** \n\n" << std::endl;
 
     std::cout << "Digite o número do CPF sem pontos, espaços ou traços:" << std::endl;
     std::cin.getline(input_cpf, 12, '\n');

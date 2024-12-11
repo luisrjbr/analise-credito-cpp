@@ -7,9 +7,9 @@
 #include <cstring>
 #include <cstdint>
 
-enum class RendaMinimaMaxima
+enum class RendaMinima
 {
-    RENDA_MINIMA = 1000, RENDA_MAXIMA = 10000
+    RENDA_MINIMA = 2000
 };
 
 enum class IdadeMinimaMaxima
@@ -28,7 +28,7 @@ public:
 
     bool validarRenda() const
     {
-        return (m_renda >= static_cast<double>(RendaMinimaMaxima::RENDA_MINIMA)) && (m_renda <= static_cast<double>(RendaMinimaMaxima::RENDA_MAXIMA));
+        return (m_renda >= static_cast<double>(RendaMinima::RENDA_MINIMA));
     }
 
     bool validarIdade() const

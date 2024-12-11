@@ -9,6 +9,6 @@ class Ferramentas
 {
 public:
     Ferramentas() = default;
-    char* converteCpfParaValidacao(std::string& cpf);
+    static char* converteCpfParaValidacao(std::string& cpf);
 };
 #endif // FERRAMENTAS_H
