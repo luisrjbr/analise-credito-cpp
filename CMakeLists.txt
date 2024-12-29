@@ -8,8 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(analise-credito-cpp main.cpp
     pessoa.h pessoa.cpp
     credito.h credito.cpp
-    risco.h risco.cpp
-    ferramentas.h ferramentas.cpp
+    fraude.h fraude.cpp
+    utilitario.h utilitario.cpp
     analise.h analise.cpp
 
 

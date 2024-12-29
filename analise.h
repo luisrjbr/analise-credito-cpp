@@ -4,36 +4,47 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <expected>
 
 template <typename T>
 class Analise
 {
 public:
-    Analise();
-
     void adicionarItem(const T& itemAnalise)
     {
         m_itensAnalise.push_back(itemAnalise);
     }
 
-    void processarItensAnalise() const
+    std::expected<std::string, std::string> processarItensAnalise() noexcept
     {
-        for(const auto& item : m_itensAnalise)
+        std::string resultado;
+        std::string descricao;
+
+        for(auto& item : m_itensAnalise)
         {
+            if(descricao.empty())
+                descricao = item.obterDescricaoValidacao();
+
             if(verificaAlerta(item))
             {
-                std::cout << "Alerta identificado" << item.descricao() << std::endl;
+                resultado += "Erro na análise de: " + descricao + "\n";
             }
         }
+
+        if(resultado.empty())
+        {
+            return std::expected<std::string, std::string>("Análise concluída sem erros: " + descricao);
+        }
+
+        return std::unexpected(resultado);
     }
 
 private:
     std::vector<T> m_itensAnalise;
 
-    bool verificaAlerta(const T& itemAnalise) const
+    bool verificaAlerta(T& itemAnalise)
     {
-        return itemAnalise.valorAlerta();
+        return itemAnalise.validarRegras();
     }
 };
 

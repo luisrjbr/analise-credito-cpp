@@ -1,6 +1,6 @@
-#include "ferramentas.h"
+#include "utilitario.h"
 
-char* Ferramentas::converteCpfParaValidacao(std::string &cpf)
+char* Utilitario::converteCpfParaValidacao(std::string &cpf)
 {
     // Cria um unique_ptr para o buffer de char, que gerenciará a memória
     std::unique_ptr<char[]> cpfConvertidoChar(new char[cpf.length() + 1]);

@@ -1,10 +1,15 @@
 #include <iostream>
 #include "pessoa.h"
-#include "risco.h"
+#include "fraude.h"
+#include "credito.h"
+
+#include <unistd.h>
 
 int main()
 {
-    //41852198060 - Cpf com impedimento
+    //OK - 60402039009 - Cpf sem impedimento de fraude e com produto contratado
+    //NOK - 41852198060 - Cpf com impedimento de fraude, mas com produto contratado
+    //NOK - 13935782098 - Cpf sem impedimento de fraude, mas sem produto contratado
 
     char input_cpf[12];
     double input_renda;
@@ -23,35 +28,26 @@ int main()
 
     if(pessoa.validarPessoa())
     {
-        std::cout << "\n\nDados Corretos!" << std::endl;
+        std::cout << "\n\nDados Informados Corretos!" << std::endl;
         std::cout << "-------------------------------------------" << std::endl;
+        std::cout << "\nSeu Crédito está sendo analisado...\n" << std::endl;
 
-        std::cout << "\nSeu Risco está sendo analisado..." << std::endl;
-        Risco risco;
-        if(risco.verificarPessoaComRisco(pessoa))
-            std::cout << "\nInfelizmente não é possivel conceder seu crédito" << std::endl;
-        else
-            std::cout << "\nParabéns, seu cadastro não encontra-se com impedimentos" << std::endl;
+        sleep(2);
+
+        Credito credito;
+
+        std::cout << credito.analisarRegrasPreCredito(pessoa) << std::endl;
     }
     else
     {
-        std::cout << "\n\nDados Incorretos! Verifique os pré requisitos." << std::endl;
+        std::cout << "\n\nDados Incorretos! Verifique os pré requisitos.\n\n" << std::endl;
     }
 
     std::cout << "-------------------------------------------" << std::endl;
+    std::cout << "\nDados Fornecidos Como Entrada: " << std::endl;
+    std::cout << pessoa << std::endl;
+    std::cout << "\n-------------------------------------------" << std::endl;
 
-    std::cout << "Dados Fornecidos Como Entrada:" << std::endl;
-    std::cout << "  " << pessoa << std::endl;
 
     return 0;
-}
-
-void testePessoaDadosPessoaisValidos()
-{
-
-}
-
-void testePessoaDadosPessoaisInvalidos()
-{
-
 }

@@ -1,14 +1,14 @@
-#ifndef FERRAMENTAS_H
-#define FERRAMENTAS_H
+#ifndef UTILITARIO_H
+#define UTILITARIO_H
 
 #include <string>
 #include <cstring>
 #include <memory>
 
-class Ferramentas
+class Utilitario
 {
 public:
-    Ferramentas() = default;
+    Utilitario() = default;
     static char* converteCpfParaValidacao(std::string& cpf);
 };
-#endif // FERRAMENTAS_H
+#endif // UTILITARIO_H
