@@ -1,13 +1,18 @@
 #include "fraude.h"
 
-Fraude::Fraude(Pessoa& pessoa) : pessoaParaAnaliseFraude(pessoa) {}
+namespace CppPessoa = CppMasterClass::Pessoa;
 
-bool Fraude::validarRegras()
+namespace CppMasterClass::Credito
+{
+
+Fraude::Fraude(CppPessoa::Pessoa& pessoa) : pessoaParaAnaliseFraude(pessoa) {}
+
+bool Fraude::validarRegras() noexcept
 {
     //cria uma lista fake de pessoas com produtos contratados
     listarPessoasComFraude();
 
-    for(Pessoa p : pessoasComFraude)
+    for(const CppPessoa::Pessoa& p : pessoasComFraude)
     {
         if (p.obterCpf() == pessoaParaAnaliseFraude.obterCpf())
             return true;
@@ -17,7 +22,7 @@ bool Fraude::validarRegras()
 
 //Passo 3: Verificar Padrão de Análise de Fraudes (Padrões e Anomalias)
 //Todas as listas são fakes para testes
-void Fraude::listarPessoasComFraude()
+void Fraude::listarPessoasComFraude() noexcept
 {
     //94089300029, 44440285058, 71925017001, 41852198060
 
@@ -26,8 +31,10 @@ void Fraude::listarPessoasComFraude()
     char input_cpf3[12] {'7','1','9','2','5','0','1','7','0','0','1'};
     char input_cpf4[12] {'4','1','8','5','2','1','9','8','0','6','0'};
 
-    Fraude::pessoasComFraude.push_back(Pessoa(input_cpf1, 1500, 25));
-    Fraude::pessoasComFraude.push_back(Pessoa(input_cpf2, 2500, 35));
-    Fraude::pessoasComFraude.push_back(Pessoa(input_cpf3, 3500, 45));
-    Fraude::pessoasComFraude.push_back(Pessoa(input_cpf4, 4500, 55));
+    Fraude::pessoasComFraude.push_back(CppPessoa::Pessoa(input_cpf1, 1500, 25));
+    Fraude::pessoasComFraude.push_back(CppPessoa::Pessoa(input_cpf2, 2500, 35));
+    Fraude::pessoasComFraude.push_back(CppPessoa::Pessoa(input_cpf3, 3500, 45));
+    Fraude::pessoasComFraude.push_back(CppPessoa::Pessoa(input_cpf4, 4500, 55));
+}
+
 }

@@ -5,6 +5,9 @@
 
 #include <unistd.h>
 
+namespace CppPessoa = CppMasterClass::Pessoa;
+namespace CppCredito = CppMasterClass::Credito;
+
 int main()
 {
     //OK - 60402039009 - Cpf sem impedimento de fraude e com produto contratado
@@ -24,7 +27,7 @@ int main()
     std::cout << "Digite sua idade:" << std::endl;
     std::cin >> input_idade;
 
-    Pessoa pessoa(input_cpf,input_renda,input_idade);
+    CppPessoa::Pessoa pessoa(input_cpf,input_renda,input_idade);
 
     if(pessoa.validarPessoa())
     {
@@ -34,7 +37,7 @@ int main()
 
         sleep(2);
 
-        Credito credito;
+        CppCredito::Credito credito;
 
         std::cout << credito.analisarRegrasPreCredito(pessoa) << std::endl;
     }

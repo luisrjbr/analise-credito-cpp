@@ -5,24 +5,29 @@
 #include <string>
 #include "pessoa.h"
 
+namespace CppPessoa = CppMasterClass::Pessoa;
+
+namespace CppMasterClass::Credito
+{
+
 class Fraude
 {
 public:
     //
 
     Fraude() = default;
-    Fraude(Pessoa& pessoa);
+    Fraude(CppPessoa::Pessoa& pessoa);
 
     //
 
-    Pessoa pessoaParaAnaliseFraude;
-    std::vector<Pessoa> pessoasComFraude;
-    static constexpr std::string DESCRICAO = "Fraude!";
+    CppPessoa::Pessoa pessoaParaAnaliseFraude;
+    std::vector<CppPessoa::Pessoa> pessoasComFraude;
+    inline static constexpr std::string DESCRICAO = "Fraude!";
 
     //
 
-    void listarPessoasComFraude();
-    bool validarRegras();
+    void listarPessoasComFraude() noexcept;
+    bool validarRegras() noexcept;
 
     std::string obterDescricaoValidacao() const
     {
@@ -31,4 +36,5 @@ public:
 
 };
 
+}
 #endif // FRAUDE_H

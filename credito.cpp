@@ -1,13 +1,18 @@
 #include "credito.h"
 
+namespace CppPessoa = CppMasterClass::Pessoa;
+
+namespace CppMasterClass::Credito
+{
+
 Credito::Credito() {}
 
-std::string Credito::analisarRegrasPreCredito(Pessoa& pessoa) noexcept
+std::string Credito::analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcept
 {
     Analise<Fraude> analiseFraude;
     analiseFraude.adicionarItem(Fraude(pessoa));
 
-    Analise<Pessoa> analisePessoa;
+    Analise<CppPessoa::Pessoa> analisePessoa;
     analisePessoa.adicionarItem(pessoa);
 
     auto resultadoFraude = analiseFraude.processarItensAnalise();
@@ -25,5 +30,7 @@ std::string Credito::analisarRegrasPreCredito(Pessoa& pessoa) noexcept
     }
 
     return resultadoFraude.value() + "\n" + resultadoPessoa.value();
+
+}
 
 }

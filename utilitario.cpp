@@ -1,5 +1,8 @@
 #include "utilitario.h"
 
+namespace CppMasterClass::Pessoa
+{
+
 char* Utilitario::converteCpfParaValidacao(std::string &cpf)
 {
     // Cria um unique_ptr para o buffer de char, que gerenciará a memória
@@ -10,4 +13,6 @@ char* Utilitario::converteCpfParaValidacao(std::string &cpf)
 
     // Libera o ponteiro do unique_ptr, retornando o char*
     return cpfConvertidoChar.release();
+}
+
 }

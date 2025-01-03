@@ -7,6 +7,10 @@
 #include <string>
 #include <cstdint>
 
+
+namespace CppMasterClass::Pessoa
+{
+
 enum class RendaMinima
 {
     RENDA_MINIMA = 2000
@@ -30,14 +34,14 @@ public:
     //
 
     std::vector<Pessoa> pessoasComProdutosContratados;
-    static constexpr std::string DESCRICAO = "Pessoa!";
+    inline static constexpr std::string DESCRICAO = "Pessoa!";
 
     //
 
     int validarCPF(char* cpf);
-    bool validarPessoa();
-    void listarPessoasComProdutoContratado();
-    bool validarRegras();
+    bool validarPessoa() noexcept;
+    void listarPessoasComProdutoContratado() noexcept;
+    bool validarRegras() noexcept;
 
     //Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão CPF, Renda e Idade
     bool validarRenda() const
@@ -92,5 +96,6 @@ inline std::ostream& operator <<(std::ostream& ostr, Pessoa& pessoa)
     return ostr;
 }
 
+}
 
 #endif // PESSOA_H

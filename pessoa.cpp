@@ -1,12 +1,15 @@
 #include "pessoa.h"
 #include "utilitario.h"
 
+namespace CppMasterClass::Pessoa
+{
+
 Pessoa::Pessoa(std::string cpf, double renda, uint8_t idade) : m_cpf(cpf), m_renda(renda), m_idade(idade)
 {
     m_cpfConvertido = Utilitario::converteCpfParaValidacao(m_cpf);
 }
 
-bool Pessoa::validarPessoa()
+bool Pessoa::validarPessoa() noexcept
 {
     return m_pessoavalida = (validarCPF(m_cpfConvertido)
                             &&validarRenda()
@@ -15,7 +18,7 @@ bool Pessoa::validarPessoa()
 
 //Passo 3: Verificar Padrão de Análise de Fraudes (Padrões e Anomalias)
 //Todas as listas são fakes para testes
-void Pessoa::listarPessoasComProdutoContratado()
+void Pessoa::listarPessoasComProdutoContratado() noexcept
 {
     //60402039009, 68269984086, 06696577009, 71411558057, 41852198060
 
@@ -33,12 +36,12 @@ void Pessoa::listarPessoasComProdutoContratado()
 }
 
 
-bool Pessoa::validarRegras()
+bool Pessoa::validarRegras() noexcept
 {
     //cria uma lista fake de pessoas com produtos contratados
     listarPessoasComProdutoContratado();
 
-    for(Pessoa pessoa : Pessoa::pessoasComProdutosContratados)
+    for(const Pessoa& pessoa : Pessoa::pessoasComProdutosContratados)
     {
         if(obterCpf() == pessoa.obterCpf())
         {
@@ -90,3 +93,4 @@ int Pessoa::validarCPF(char* cpf)
     return 1;
 }
 
+}

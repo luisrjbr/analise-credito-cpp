@@ -6,6 +6,9 @@
 #include <vector>
 #include <expected>
 
+namespace CppMasterClass::Credito
+{
+
 template <typename T>
 class Analise
 {
@@ -15,7 +18,7 @@ public:
         m_itensAnalise.push_back(itemAnalise);
     }
 
-    std::expected<std::string, std::string> processarItensAnalise() noexcept
+    [[nodiscard]] std::expected<std::string, std::string> processarItensAnalise() noexcept
     {
         std::string resultado;
         std::string descricao;
@@ -48,4 +51,5 @@ private:
     }
 };
 
+}
 #endif // ANALISE_H

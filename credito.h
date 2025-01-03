@@ -6,10 +6,16 @@
 #include "fraude.h"
 #include "pessoa.h"
 
+namespace CppPessoa = CppMasterClass::Pessoa;
+
+namespace CppMasterClass::Credito
+{
+
 enum class TipoDeRisco
 {
     ALTO, MEDIO, BAIXO
 };
+
 
 class Credito
 {
@@ -18,8 +24,9 @@ public:
 
     //
 
-    std::string analisarRegrasPreCredito(Pessoa& pessoa) noexcept;
+    std::string analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcept;
 
 };
 
+}
 #endif // CREDITO_H
