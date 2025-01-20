@@ -10,7 +10,8 @@ add_executable(analise-credito-cpp main.cpp
     credito.h credito.cpp
     fraude.h fraude.cpp
     utilitario.h utilitario.cpp
-    analise.h analise.cpp
+    analise.h
+    score.h score.cpp
 
 
 )

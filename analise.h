@@ -9,6 +9,9 @@
 namespace CppMasterClass::Credito
 {
 
+//Solução genérica que funciona com diferentes tipos de objetos usando polimorfismo estático com templates
+//Essa implementação funciona como um padrão strategy em que a estratégia é delegada a outros objetos
+//que definem suas próprias versões de "estratégia" de alerta, usando valorAlerta.
 template <typename T>
 class Analise
 {

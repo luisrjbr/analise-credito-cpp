@@ -11,11 +11,6 @@
 namespace CppMasterClass::Pessoa
 {
 
-enum class RendaMinima
-{
-    RENDA_MINIMA = 2000
-};
-
 enum class IdadeMinimaMaxima
 {
     IDADE_MINIMA = 18, IDADE_MAXIMA = 70
@@ -35,6 +30,7 @@ public:
 
     std::vector<Pessoa> pessoasComProdutosContratados;
     inline static constexpr std::string DESCRICAO = "Pessoa!";
+    inline static constexpr double RENDA_MINIMA = 2000.00;
 
     //
 
@@ -43,13 +39,11 @@ public:
     void listarPessoasComProdutoContratado() noexcept;
     bool validarRegras() noexcept;
 
-    //Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão CPF, Renda e Idade
     bool validarRenda() const
     {
-        return (m_renda >= static_cast<double>(RendaMinima::RENDA_MINIMA));
+        return (m_renda >= RENDA_MINIMA);
     }
 
-    //Passo 1: Coleta e Validação de Dados do Usuário. Os Dados fornecidos serão CPF, Renda e Idade
     bool validarIdade() const
     {
         return (m_idade >= static_cast<double>(IdadeMinimaMaxima::IDADE_MINIMA)) && (m_idade <= static_cast<double>(IdadeMinimaMaxima::IDADE_MAXIMA));
@@ -83,6 +77,7 @@ private:
     uint8_t m_idade : 7;
 };
 
+//Sobrescreve o operador << para ter uma mensagem de saida padrão com informações do usuário
 inline std::ostream& operator <<(std::ostream& ostr, Pessoa& pessoa)
 {
     ostr    << "[CPF: '"   << pessoa.obterCpf()

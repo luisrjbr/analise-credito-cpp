@@ -9,6 +9,7 @@ Pessoa::Pessoa(std::string cpf, double renda, uint8_t idade) : m_cpf(cpf), m_ren
     m_cpfConvertido = Utilitario::converteCpfParaValidacao(m_cpf);
 }
 
+//Passo 1: Coleta e Validação de Dados da Pessoa. Os Dados fornecidos serão CPF, Renda e Idade
 bool Pessoa::validarPessoa() noexcept
 {
     return m_pessoavalida = (validarCPF(m_cpfConvertido)
@@ -16,11 +17,11 @@ bool Pessoa::validarPessoa() noexcept
                             && validarIdade());
 }
 
-//Passo 3: Verificar Padrão de Análise de Fraudes (Padrões e Anomalias)
-//Todas as listas são fakes para testes
+//Passo 2: Consultar Histórico Internos do Usuário na Instituição
 void Pessoa::listarPessoasComProdutoContratado() noexcept
 {
     //60402039009, 68269984086, 06696577009, 71411558057, 41852198060
+    //Todas as listas são fakes para testes
 
     char input_cpf1[12] {'6','0','4','0','2','0','3','9','0','0','9'};
     char input_cpf2[12] {'6','8','2','6','9','9','8','4','0','8','6'};
@@ -52,8 +53,9 @@ bool Pessoa::validarRegras() noexcept
     return true;
 }
 
-//Código pego do repositóriohttps://gist.github.com/eduardoedson/8f991b6d234a9ebdcbe3
-//Retorno: [1] - Se for válido | [0] - Se for inválido
+//Passo 1: Coleta e Validação de Dados da Pessoa. Os Dados fornecidos serão CPF, Renda e Idade
+//Código pego do repositório: https://gist.github.com/eduardoedson/8f991b6d234a9ebdcbe3
+//Retorno: 1 - válido | 0 - inválido
 int Pessoa::validarCPF(char* cpf)
 {
     int i, j, digito1 = 0, digito2 = 0;
