@@ -41,7 +41,7 @@ public:
 
     bool validarRenda() const
     {
-        return (m_renda >= RENDA_MINIMA);
+        return (m_renda > RENDA_MINIMA);
     }
 
     bool validarIdade() const

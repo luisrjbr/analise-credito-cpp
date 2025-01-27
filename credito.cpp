@@ -7,7 +7,7 @@ namespace CppMasterClass::Credito
 
 Credito::Credito() {}
 
-std::string Credito::analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcept
+bool Credito::analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcept
 {
     Analise<Fraude> analiseFraude;
     analiseFraude.adicionarItem(Fraude(pessoa));
@@ -16,21 +16,33 @@ std::string Credito::analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcep
     analisePessoa.adicionarItem(pessoa);
 
     auto resultadoFraude = analiseFraude.processarItensAnalise();
+    auto resultadoPessoa = analisePessoa.processarItensAnalise();
 
     if(!resultadoFraude.has_value())
     {
-        return resultadoFraude.error();
+        Credito::mensagemRegrasPreCredito = resultadoFraude.error();
+        return false;
     }
-
-    auto resultadoPessoa = analisePessoa.processarItensAnalise();
-
-    if(!resultadoPessoa.has_value())
+    else if(!resultadoPessoa.has_value())
     {
-        return resultadoPessoa.error();
+        Credito::mensagemRegrasPreCredito = resultadoPessoa.error();
+        return false;
     }
+    else
+    {
+        Credito::mensagemRegrasPreCredito = resultadoFraude.value() + "\n" + resultadoPessoa.value();
+        return true;
+    }
+}
 
-    return resultadoFraude.value() + "\n" + resultadoPessoa.value();
-
+double Credito::informarLimiteDeCredito(CppPessoa::Pessoa& pessoa) noexcept
+{
+    if(Credito::m_score->calcularScore(pessoa) == ScoreDeRisco::ALTO)
+        return 3000.00;
+    if(Credito::m_score->calcularScore(pessoa) == ScoreDeRisco::MEDIO)
+        return 6000.00;
+    if(Credito::m_score->calcularScore(pessoa) == ScoreDeRisco::BAIXO)
+        return 9000.00;
 }
 
 }

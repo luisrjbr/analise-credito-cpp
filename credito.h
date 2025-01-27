@@ -2,9 +2,11 @@
 #define CREDITO_H
 
 #include <string>
+#include <memory>
 #include "analise.h"
 #include "fraude.h"
 #include "pessoa.h"
+#include "score.h"
 
 namespace CppPessoa = CppMasterClass::Pessoa;
 
@@ -23,8 +25,16 @@ public:
     Credito();
 
     //
+    std::string mensagemRegrasPreCredito = "";
 
-    std::string analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcept;
+    //
+
+    bool analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcept;
+    double informarLimiteDeCredito(CppPessoa::Pessoa& pessoa) noexcept;
+    const Score& obterScore() const { return *m_score; }
+
+private:
+    std::unique_ptr<Score> m_score;
 
 };
 

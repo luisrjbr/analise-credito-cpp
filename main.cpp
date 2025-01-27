@@ -39,7 +39,13 @@ int main()
 
         CppCredito::Credito credito;
 
-        std::cout << credito.analisarRegrasPreCredito(pessoa) << std::endl;
+        if(!credito.analisarRegrasPreCredito(pessoa))
+            std::cout << credito.mensagemRegrasPreCredito << std::endl;
+        else
+        {
+            std::cout << credito.mensagemRegrasPreCredito << std::endl;
+            std::cout << credito.informarLimiteDeCredito(pessoa) << std::endl;
+        }
     }
     else
     {

@@ -9,14 +9,20 @@ namespace CppPessoa = CppMasterClass::Pessoa;
 namespace CppMasterClass::Credito
 {
 
-class score
+enum class ScoreDeRisco
+{
+    ALTO, MEDIO, BAIXO
+};
+
+
+class Score
 {
 public:
-    score();
+    Score();
 
     //
 
-    std::string calcularScore(CppPessoa::Pessoa &Pessoa);
+    ScoreDeRisco calcularScore(CppPessoa::Pessoa &Pessoa) noexcept;
 
 };
 
