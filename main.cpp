@@ -5,7 +5,6 @@
 #include "fraude.h"
 #include "credito.h"
 
-
 namespace CppPessoa = CppMasterClass::Pessoa;
 namespace CppCredito = CppMasterClass::Credito;
 
@@ -45,14 +44,14 @@ int main()
         else
         {
             std::cout << credito.mensagemRegrasPreCredito << std::endl;
-            std::cout << "\nParabéns!!! Seu Crédito é de: " +
+            std::cout << "\nParabéns! Seu Crédito é de: " +
                              std::format("{:.2f}", credito.informarLimiteDeCredito(pessoa));
 
         }
     }
     else
     {
-        std::cout << "\n\nDados Incorretos! Verifique os pré requisitos.\n\n" << std::endl;
+        std::cout << "\n\nDados Incorretos! Verifique os Pré Requisitos.\n\n" << std::endl;
     }
 
     std::cout << "\n-------------------------------------------" << std::endl;
