@@ -33,7 +33,7 @@ int main()
     {
         std::cout << "\n\nDados Informados Corretos!" << std::endl;
         std::cout << "-------------------------------------------" << std::endl;
-        std::cout << "\nAguarde. Seu Crédito está sendo analisado...\n" << std::endl;
+        std::cout << "\nPor Favor Aguarde. Seu Crédito está sendo analisado...\n" << std::endl;
 
         sleep(2);
 
