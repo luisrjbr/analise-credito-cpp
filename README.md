@@ -47,8 +47,11 @@ Passo 5: Após o Cálculo do Score Definir o Limite de Crédito
   		Risco	Limite de Crédito	
   		"Alto"	3000
   		"Medio"	6000
-  		"Baixo"	9000		
-	
+  		"Baixo"	9000
+  	
+- A partir do limite de crédito informar que o pagamento será feito em 4 parcelas;
+- Informar a maior parcela paga corrigida pelo valor de 1% ao mês sobre o valor recebido;
+ 
 # Casos de Uso:     
 
 Caso de Uso 1: Verificar Risco de Fraude da Pessoa
