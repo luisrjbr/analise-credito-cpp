@@ -99,5 +99,5 @@ Caso de Uso 2: Realizar Análise do Limite de Crédito da Pessoa
         	Limite de crédito: Valor de crédito aprovado inicialmente para o usuário.
 
   #Diagrama de Classes:
-  ![image](https://github.com/user-attachments/assets/13737e1a-0745-4394-9c2c-8a3a33a65880)
+  ![image](https://github.com/user-attachments/assets/23fa84f6-5f91-44d4-9760-c1fcd7b22982)
 
