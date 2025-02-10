@@ -1,12 +1,11 @@
 #include "pessoa.h"
-#include "utilitario.h"
 
 namespace CppMasterClass::Pessoa
 {
 
 Pessoa::Pessoa(std::string cpf, double renda, uint8_t idade) : m_cpf(cpf), m_renda(renda), m_idade(idade)
 {
-    m_cpfConvertido = Utilitario::converteCpfParaValidacao(m_cpf);
+    m_cpfConvertido = converteCpfParaValidacao(m_cpf);
 }
 
 //Passo 1: Coleta e Validação de Dados da Pessoa. Os Dados fornecidos serão CPF, Renda e Idade
@@ -95,4 +94,15 @@ int Pessoa::validarCPF(char* cpf)
     return 1;
 }
 
+char* Pessoa::converteCpfParaValidacao(std::string &cpf)
+{
+    // Cria um unique_ptr para o buffer de char, que gerenciará a memória
+    std::unique_ptr<char[]> cpfConvertidoChar(new char[cpf.length() + 1]);
+
+    // Copia o conteúdo da string para o buffer
+    std::strncpy(cpfConvertidoChar.get(), cpf.c_str(), cpf.length() + 1);
+
+    // Libera o ponteiro do unique_ptr, retornando o char*
+    return cpfConvertidoChar.release();
+}
 }

@@ -9,9 +9,12 @@ add_executable(analise-credito-cpp main.cpp
     pessoa.h pessoa.cpp
     credito.h credito.cpp
     fraude.h fraude.cpp
-    utilitario.h utilitario.cpp
+
     analise.h
     score.h score.cpp
+    arraypersonalizado.h arraypersonalizado.cpp
+    arrayfuncoes.h arrayfuncoes.cpp
+
 
 
 )

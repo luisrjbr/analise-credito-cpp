@@ -6,7 +6,8 @@
 #include <iostream>
 #include <string>
 #include <cstdint>
-
+#include <memory>
+#include <cstring>
 
 namespace CppMasterClass::Pessoa
 {
@@ -38,6 +39,7 @@ public:
     bool validarPessoa() noexcept;
     void listarPessoasComProdutoContratado() noexcept;
     bool validarRegras() noexcept;
+    static char* converteCpfParaValidacao(std::string& cpf);
 
     bool validarRenda() const
     {

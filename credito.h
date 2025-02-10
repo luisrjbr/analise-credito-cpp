@@ -7,6 +7,8 @@
 #include "fraude.h"
 #include "pessoa.h"
 #include "score.h"
+#include "arraypersonalizado.h"
+#include "arrayfuncoes.h"
 
 namespace CppPessoa = CppMasterClass::Pessoa;
 
@@ -26,11 +28,16 @@ public:
 
     //
     std::string mensagemRegrasPreCredito = "";
+    inline static constexpr size_t NUMEROPARCELAS = 4;
+    int parcelaSemJuros = 0;
+    float creditoFornecido = 0;
+    float maiorValorDaParcela = 0;
 
     //
 
     bool analisarRegrasPreCredito(CppPessoa::Pessoa& pessoa) noexcept;
-    double informarLimiteDeCredito(CppPessoa::Pessoa& pessoa) noexcept;
+    float informarLimiteDeCredito(CppPessoa::Pessoa& pessoa) noexcept;
+    float obterNumeroParcelasDoCredito() noexcept;
     const Score& obterScore() const { return *m_score; }
 
 private:

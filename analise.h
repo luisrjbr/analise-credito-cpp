@@ -16,11 +16,14 @@ template <typename T>
 class Analise
 {
 public:
-    void adicionarItem(const T& itemAnalise)
+    void adicionarItem(const T& itemAnalise) noexcept
     {
         m_itensAnalise.push_back(itemAnalise);
     }
 
+    //quem está chamando não deve descartar o retorno
+    //trata o erro com expected
+    //não tem emissão de exeption
     [[nodiscard]] std::expected<std::string, std::string> processarItensAnalise() noexcept
     {
         std::string resultado;
@@ -48,7 +51,7 @@ public:
 private:
     std::vector<T> m_itensAnalise;
 
-    bool verificaAlerta(T& itemAnalise)
+    bool verificaAlerta(T& itemAnalise) noexcept
     {
         return itemAnalise.validarRegras();
     }

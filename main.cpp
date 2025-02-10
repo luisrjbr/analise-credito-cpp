@@ -46,6 +46,9 @@ int main()
             std::cout << credito.mensagemRegrasPreCredito << std::endl;
             std::cout << "\nParabéns! Seu Crédito é de: " +
                              std::format("{:.2f}", credito.informarLimiteDeCredito(pessoa));
+            std::cout << "\n\nE será pago a você em " + std::to_string(credito.NUMEROPARCELAS) + " parcelas";
+            std::cout << "\nNão se procupe, elas serão corrigidas sendo a maior parcela no valor de: " +
+                             std::format("{:.2f}", credito.obterNumeroParcelasDoCredito());
 
         }
     }

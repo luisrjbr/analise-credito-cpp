@@ -73,14 +73,20 @@ build CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o: CXX_COMPILER__analise-cre
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
 
-build CMakeFiles/analise-credito-cpp.dir/utilitario.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/utilitario.cpp || cmake_object_order_depends_target_analise-credito-cpp
-  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/utilitario.cpp.o.d
+build CMakeFiles/analise-credito-cpp.dir/score.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/score.cpp || cmake_object_order_depends_target_analise-credito-cpp
+  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/score.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
 
-build CMakeFiles/analise-credito-cpp.dir/score.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/score.cpp || cmake_object_order_depends_target_analise-credito-cpp
-  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/score.cpp.o.d
+build CMakeFiles/analise-credito-cpp.dir/arraypersonalizado.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/arraypersonalizado.cpp || cmake_object_order_depends_target_analise-credito-cpp
+  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/arraypersonalizado.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
+  OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
+
+build CMakeFiles/analise-credito-cpp.dir/arrayfuncoes.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/arrayfuncoes.cpp || cmake_object_order_depends_target_analise-credito-cpp
+  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/arrayfuncoes.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
@@ -93,7 +99,7 @@ build CMakeFiles/analise-credito-cpp.dir/score.cpp.o: CXX_COMPILER__analise-cred
 #############################################
 # Link the executable analise-credito-cpp
 
-build analise-credito-cpp: CXX_EXECUTABLE_LINKER__analise-credito-cpp_Debug CMakeFiles/analise-credito-cpp.dir/main.cpp.o CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o CMakeFiles/analise-credito-cpp.dir/credito.cpp.o CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o CMakeFiles/analise-credito-cpp.dir/utilitario.cpp.o CMakeFiles/analise-credito-cpp.dir/score.cpp.o
+build analise-credito-cpp: CXX_EXECUTABLE_LINKER__analise-credito-cpp_Debug CMakeFiles/analise-credito-cpp.dir/main.cpp.o CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o CMakeFiles/analise-credito-cpp.dir/credito.cpp.o CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o CMakeFiles/analise-credito-cpp.dir/score.cpp.o CMakeFiles/analise-credito-cpp.dir/arraypersonalizado.cpp.o CMakeFiles/analise-credito-cpp.dir/arrayfuncoes.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   POST_BUILD = :
