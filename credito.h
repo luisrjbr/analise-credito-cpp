@@ -29,7 +29,6 @@ public:
     //
     std::string mensagemRegrasPreCredito = "";
     inline static constexpr size_t NUMEROPARCELAS = 4;
-    int parcelaSemJuros = 0;
     float creditoFornecido = 0;
     float maiorValorDaParcela = 0;
 

@@ -12,11 +12,10 @@ add_executable(analise-credito-cpp main.cpp
 
     analise.h
     score.h score.cpp
-    arraypersonalizado.h arraypersonalizado.cpp
-    arrayfuncoes.h arrayfuncoes.cpp
-
-
-
+    arraypersonalizado.h
+    arrayfuncoes.h
+    arraypersonalizadoconstiterator.h
+    arraypersonalizadoiterator.h
 )
 
 include(GNUInstallDirs)

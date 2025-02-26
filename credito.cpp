@@ -1,6 +1,8 @@
 #include "credito.h"
 
 namespace CppPessoa = CppMasterClass::Pessoa;
+namespace CppArray = CppMasterClass::ArraysPersonalizados;
+namespace CppAlgoritmos = CppMasterClass::ArraysAlgoritmos;
 
 namespace CppMasterClass::Credito
 {
@@ -52,16 +54,18 @@ float Credito::informarLimiteDeCredito(CppPessoa::Pessoa& pessoa) noexcept
         creditoFornecido = 9000.00;
         return 9000.00;
     }
+
+    return 0.0;
 }
 
 float Credito::obterNumeroParcelasDoCredito() noexcept
 {
-    ArrayFuncoes arrayFuncoes;
+    CppAlgoritmos::ArrayFuncoes arrayFuncoes;
 
     float creditoFuturoParcelado = creditoFornecido / NUMEROPARCELAS;
     float juros = 0.01;
 
-    ArrayPersonalizado<int, NUMEROPARCELAS> arrParcelas;
+    CppArray::ArrayPersonalizado<int, NUMEROPARCELAS> arrParcelas;
 
     arrParcelas[0] = creditoFuturoParcelado + (creditoFuturoParcelado * juros);
 
@@ -70,10 +74,8 @@ float Credito::obterNumeroParcelasDoCredito() noexcept
         arrParcelas[i] = arrParcelas[i-1] + (arrParcelas[i-1] * juros);
     }
 
-    if(const auto res = arrayFuncoes.max_element(arrParcelas); res)
-    {
-        return res.value();
-    }
+    const auto res = arrayFuncoes.max_element(arrParcelas.begin(), arrParcelas.end());
+    return *res;
 
     return 0;
 }

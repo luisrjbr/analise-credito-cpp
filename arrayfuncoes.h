@@ -4,28 +4,31 @@
 #include <expected>
 #include <string>
 #include <array>
+#include <list>
+#include <vector>
 
+namespace CppMasterClass::ArraysAlgoritmos
+{
+//Ajustar nome ContainersFuncoes
 class ArrayFuncoes
 {
 public:
-    ArrayFuncoes();
+    ArrayFuncoes() = default;
 
-    template<typename T>
-    constexpr std::expected<typename T::value_type, std::string> max_element(const T &arr) noexcept
+    template<typename It>
+    constexpr It max_element(It begin, It end) noexcept
     {
-        if(arr.empty())
-            return std::unexpected("Array is empty");
+        auto greaterElement = begin;
 
-        auto greatElement = arr[0];
-
-        for(size_t i; i < arr.size(); ++i)
+        for(auto it = std::next(begin); it != end; it++)
         {
-            if(arr[i] > greatElement)
-                greatElement = arr[i];
+            if(*it > *greaterElement)
+                greaterElement = it;
         }
 
-        return greatElement;
+        return greaterElement;
     }
 };
+}
 
 #endif // ARRAYFUNCOES_H

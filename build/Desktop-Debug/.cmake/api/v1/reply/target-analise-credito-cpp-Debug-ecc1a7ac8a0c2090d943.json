@@ -31,7 +31,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 23,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -60,10 +60,7 @@
 				2,
 				4,
 				6,
-				9,
-				11,
-				13,
-				15
+				9
 			]
 		}
 	],
@@ -114,10 +111,7 @@
 				2,
 				4,
 				6,
-				9,
-				11,
-				13,
-				15
+				9
 			]
 		},
 		{
@@ -130,8 +124,9 @@
 				7,
 				8,
 				10,
+				11,
 				12,
-				14
+				13
 			]
 		}
 	],
@@ -199,31 +194,18 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "arraypersonalizado.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "arrayfuncoes.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "arrayfuncoes.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "teste.h",
+			"path" : "arraypersonalizadoconstiterator.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "teste.cpp",
-			"sourceGroupIndex" : 0
+			"path" : "arraypersonalizadoiterator.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"
