@@ -4,6 +4,7 @@
 #include<vector>
 #include <string>
 #include "pessoa.h"
+#include <memory>
 
 namespace CppPessoa = CppMasterClass::Pessoa;
 

@@ -43,12 +43,22 @@ int main()
             std::cout << credito.mensagemRegrasPreCredito << std::endl;
         else
         {
-            std::cout << credito.mensagemRegrasPreCredito << std::endl;
-            std::cout << "\nParabéns! Seu Crédito é de: " +
-                             std::format("{:.2f}", credito.informarLimiteDeCredito(pessoa));
-            std::cout << "\n\nE será pago a você em " + std::to_string(credito.NUMEROPARCELAS) + " parcelas";
-            std::cout << "\nNão se procupe, elas serão corrigidas sendo a maior parcela no valor de: " +
-                             std::format("{:.2f}", credito.obterNumeroParcelasDoCredito());
+            //teste de stackoverflow
+            constexpr size_t LIMITESTACK = ((((1024 * 1024) / sizeof(int))) * 8);
+
+            if (credito.NUMEROPARCELAS >= LIMITESTACK)
+            {
+                std::cout << "Ocorreu um erro interno!" << std::endl;
+            }
+            else
+            {
+                std::cout << credito.mensagemRegrasPreCredito << std::endl;
+                std::cout << "\nParabéns! Seu Crédito é de: " +
+                                 std::format("{:.2f}", credito.informarLimiteDeCredito(pessoa));
+                std::cout << "\n\nE será pago a você em " + std::to_string(credito.NUMEROPARCELAS) + " parcelas";
+                std::cout << "\nNão se procupe, elas serão corrigidas sendo a maior parcela no valor de: " +
+                                 std::format("{:.2f}", credito.obterNumeroParcelasDoCredito());
+            }
 
         }
     }

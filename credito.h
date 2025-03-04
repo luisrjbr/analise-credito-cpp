@@ -28,6 +28,10 @@ public:
 
     //
     std::string mensagemRegrasPreCredito = "";
+    //a linha abaixo causa um stack overflow, pois vai além do limite da stack. A única preocupação com a stack é quanto ao tamanho. Ela também é volátil
+    //inline static constexpr size_t NUMEROPARCELAS = (((1024 * 1024) / sizeof(int))) * 8;
+
+    //memória global inicializando com inline e global com static
     inline static constexpr size_t NUMEROPARCELAS = 4;
     float creditoFornecido = 0;
     float maiorValorDaParcela = 0;

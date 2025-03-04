@@ -64,18 +64,41 @@ float Credito::obterNumeroParcelasDoCredito() noexcept
 
     float creditoFuturoParcelado = creditoFornecido / NUMEROPARCELAS;
     float juros = 0.01;
+    constexpr size_t LIMITESTACK = ((((1024 * 1024) / sizeof(int))) * 8);
 
-    CppArray::ArrayPersonalizado<int, NUMEROPARCELAS> arrParcelas;
-
-    arrParcelas[0] = creditoFuturoParcelado + (creditoFuturoParcelado * juros);
-
-    for(size_t i = 1; i < NUMEROPARCELAS; ++i)
+    //Heap - aloca na heap para não ter erro de stack overflow
+    if constexpr (NUMEROPARCELAS >= LIMITESTACK)
     {
-        arrParcelas[i] = arrParcelas[i-1] + (arrParcelas[i-1] * juros);
-    }
+        //stack = heap;
+        auto arrParcelas = std::make_unique<CppArray::ArrayPersonalizado<int, NUMEROPARCELAS>>();
 
-    const auto res = arrayFuncoes.max_element(arrParcelas.begin(), arrParcelas.end());
-    return *res;
+        (*arrParcelas)[0] = creditoFuturoParcelado + (creditoFuturoParcelado * juros);
+
+        for(size_t i = 1; i < NUMEROPARCELAS; ++i)
+        {
+            (*arrParcelas)[i] = (*arrParcelas)[i-1] + ((*arrParcelas)[i-1] * juros);
+        }
+
+        const auto res = arrayFuncoes.max_element((*arrParcelas).begin(), (*arrParcelas).end());
+
+        return 0;
+    }
+    //Stack
+    else
+    {
+        CppArray::ArrayPersonalizado<int, NUMEROPARCELAS> arrParcelas;
+
+        arrParcelas[0] = creditoFuturoParcelado + (creditoFuturoParcelado * juros);
+
+        for(size_t i = 1; i < NUMEROPARCELAS; ++i)
+        {
+            arrParcelas[i] = arrParcelas[i-1] + (arrParcelas[i-1] * juros);
+        }
+
+        const auto res = arrayFuncoes.max_element(arrParcelas.begin(), arrParcelas.end());
+
+        return *res;
+    }
 
     return 0;
 }
