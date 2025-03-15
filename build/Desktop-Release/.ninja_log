@@ -1,0 +1,15 @@
+# ninja log v6
+25	20418	1741313734422263256	CMakeFiles/analise-credito-cpp.dir/score.cpp.o	764333b39bb77439
+11	26129	1741313734408263002	CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o	9cc5d2c39a37cb20
+16	26725	1741313734413263093	CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o	7f5777025192a972
+13	34715	1741313734410263038	CMakeFiles/analise-credito-cpp.dir/credito.cpp.o	66f6e3f49f4263b2
+5	44984	1741313734402262893	CMakeFiles/analise-credito-cpp.dir/main.cpp.o	eb92cfd58369373d
+44985	45402	1741313779382081568	analise-credito-cpp	114ccbf26fe9853d
+34	38216	1741313811897677301	CMakeFiles/analise-credito-cpp.dir/main.cpp.o	eb92cfd58369373d
+38216	38579	1741313850079380736	analise-credito-cpp	114ccbf26fe9853d
+24	41969	1741313941444079354	CMakeFiles/analise-credito-cpp.dir/main.cpp.o	eb92cfd58369373d
+41969	42373	1741313983388865670	analise-credito-cpp	114ccbf26fe9853d
+16	8161	1741568494670451817	CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o	7f5777025192a972
+13	12394	1741568494667452065	CMakeFiles/analise-credito-cpp.dir/credito.cpp.o	66f6e3f49f4263b2
+11	19201	1741568494666452147	CMakeFiles/analise-credito-cpp.dir/main.cpp.o	eb92cfd58369373d
+19201	19608	1741568513855150928	analise-credito-cpp	114ccbf26fe9853d

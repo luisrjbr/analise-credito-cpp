@@ -8,7 +8,7 @@
 #include "pessoa.h"
 #include "score.h"
 #include "arraypersonalizado.h"
-#include "arrayfuncoes.h"
+#include "containersfuncoes.h"
 
 namespace CppPessoa = CppMasterClass::Pessoa;
 

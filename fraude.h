@@ -1,12 +1,13 @@
 #ifndef FRAUDE_H
 #define FRAUDE_H
 
-#include<vector>
 #include <string>
-#include "pessoa.h"
 #include <memory>
+#include "vectorpersonalizado.h"
+#include "pessoa.h"
 
 namespace CppPessoa = CppMasterClass::Pessoa;
+namespace CppContainers = CppMasterClass::Containers;
 
 namespace CppMasterClass::Credito
 {
@@ -22,7 +23,9 @@ public:
     //
 
     CppPessoa::Pessoa pessoaParaAnaliseFraude;
-    std::vector<CppPessoa::Pessoa> pessoasComFraude;
+    //vetor personalizado
+    CppContainers::VectorPersonalizado<CppPessoa::Pessoa> pessoasComFraude;
+
     inline static constexpr std::string DESCRICAO = "Fraude!";
 
     //

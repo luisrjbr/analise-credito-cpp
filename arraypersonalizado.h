@@ -6,7 +6,7 @@
 #include "arraypersonalizadoiterator.h"
 
 
-namespace CppMasterClass::ArraysPersonalizados
+namespace CppMasterClass::Containers
 {
 template<typename T, size_t Size>
 class ArrayPersonalizado

@@ -1,12 +1,14 @@
 #include <iostream>
 #include <format>
 #include <unistd.h>
+#include "vectorpersonalizado.h"
 #include "pessoa.h"
 #include "fraude.h"
 #include "credito.h"
 
 namespace CppPessoa = CppMasterClass::Pessoa;
 namespace CppCredito = CppMasterClass::Credito;
+namespace CppContainers = CppMasterClass::Containers;
 
 int main()
 {
@@ -70,6 +72,20 @@ int main()
     std::cout << "\n-------------------------------------------" << std::endl;
     std::cout << "\nLog dos Dados Fornecidos Como Entrada e Seus Tipos: " << std::endl;
     std::cout << pessoa << std::endl;
+    std::cout << "\n-------------------------------------------" << std::endl;
+
+    CppContainers::ContainersFuncoes containerFunc;
+    CppContainers::VectorPersonalizado<int> vecInt(100000);
+
+    auto totalVec = containerFunc.performanceTest2<CppContainers::VectorPersonalizado<int>>(100000);
+
+
+    //semântica Move, passa como uma referência rvalue, captura e manipula valores temporários
+    CppContainers::VectorPersonalizado<int> vec2(std::move(vecInt));
+
+    std::cout << "\n-------------------------------------------" << std::endl;
+    std::cout << "\nTestes de Performance: " << std::endl;
+    std::cout << totalVec << std::endl;
     std::cout << "\n-------------------------------------------" << std::endl;
 
 

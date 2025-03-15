@@ -1,8 +1,7 @@
 #include "credito.h"
 
 namespace CppPessoa = CppMasterClass::Pessoa;
-namespace CppArray = CppMasterClass::ArraysPersonalizados;
-namespace CppAlgoritmos = CppMasterClass::ArraysAlgoritmos;
+namespace CppContainers = CppMasterClass::Containers;
 
 namespace CppMasterClass::Credito
 {
@@ -60,17 +59,17 @@ float Credito::informarLimiteDeCredito(CppPessoa::Pessoa& pessoa) noexcept
 
 float Credito::obterNumeroParcelasDoCredito() noexcept
 {
-    CppAlgoritmos::ArrayFuncoes arrayFuncoes;
+    CppContainers::ContainersFuncoes arrayFuncoes;
 
     float creditoFuturoParcelado = creditoFornecido / NUMEROPARCELAS;
     float juros = 0.01;
     constexpr size_t LIMITESTACK = ((((1024 * 1024) / sizeof(int))) * 8);
 
-    //Heap - aloca na heap para não ter erro de stack overflow
+    //Heap - aloca na heap para não ter erro de stack overflow, mas arrays não devem ser alocados na heap, são fixos e deveriam estar na stack
     if constexpr (NUMEROPARCELAS >= LIMITESTACK)
     {
         //stack = heap;
-        auto arrParcelas = std::make_unique<CppArray::ArrayPersonalizado<int, NUMEROPARCELAS>>();
+        auto arrParcelas = std::make_unique<CppContainers::ArrayPersonalizado<int, NUMEROPARCELAS>>();
 
         (*arrParcelas)[0] = creditoFuturoParcelado + (creditoFuturoParcelado * juros);
 
@@ -86,7 +85,7 @@ float Credito::obterNumeroParcelasDoCredito() noexcept
     //Stack
     else
     {
-        CppArray::ArrayPersonalizado<int, NUMEROPARCELAS> arrParcelas;
+        CppContainers::ArrayPersonalizado<int, NUMEROPARCELAS> arrParcelas;
 
         arrParcelas[0] = creditoFuturoParcelado + (creditoFuturoParcelado * juros);
 

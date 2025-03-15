@@ -31,7 +31,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 22,
+				"line" : 24,
 				"parent" : 0
 			}
 		]
@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++23 -fdiagnostics-color=always"
+					"fragment" : "-O3 -DNDEBUG -std=gnu++23 -fdiagnostics-color=always"
 				}
 			],
 			"language" : "CXX",
@@ -84,7 +84,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-O3 -DNDEBUG",
 				"role" : "flags"
 			},
 			{
@@ -126,7 +126,9 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14,
+				15
 			]
 		}
 	],
@@ -194,7 +196,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "arrayfuncoes.h",
+			"path" : "containersfuncoes.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -205,6 +207,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "arraypersonalizadoiterator.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "vectorpersonalizado.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "vectorpersonalizadoconstiterator.h",
 			"sourceGroupIndex" : 1
 		}
 	],
