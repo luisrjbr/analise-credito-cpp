@@ -26,6 +26,7 @@ public:
 
     Pessoa() = default;
     Pessoa(std::string cpf, double renda, uint8_t idade);
+    virtual ~Pessoa() = default; // Sempre bom ter um destrutor virtual
 
     //
 
@@ -56,12 +57,12 @@ public:
         return m_cpf;
     }
 
-    double obterRenda() const
+    virtual double obterRenda() const
     {
         return m_renda;
     }
 
-    short obterIdade() const
+    virtual short obterIdade() const
     {
         return m_idade;
     }

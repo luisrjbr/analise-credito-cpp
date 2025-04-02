@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/run_test.dir/score_test.cpp.o -o run_test  /usr/local/lib/libgtest.a /usr/local/lib/libgmock.a -lpthread /usr/local/lib/libgtest.a 

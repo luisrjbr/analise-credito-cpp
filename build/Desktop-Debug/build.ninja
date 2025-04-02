@@ -41,41 +41,71 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/luisrjbr/aulac++/analise-credito-cpp/build/Desktop-Debug/
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target analise_credito_lib
+
+
+#############################################
+# Order-only phony target for analise_credito_lib
+
+build cmake_object_order_depends_target_analise_credito_lib: phony || .
+
+build CMakeFiles/analise_credito_lib.dir/pessoa.cpp.o: CXX_COMPILER__analise_credito_lib_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/pessoa.cpp || cmake_object_order_depends_target_analise_credito_lib
+  DEP_FILE = CMakeFiles/analise_credito_lib.dir/pessoa.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/analise_credito_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles/analise_credito_lib.dir
+
+build CMakeFiles/analise_credito_lib.dir/credito.cpp.o: CXX_COMPILER__analise_credito_lib_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/credito.cpp || cmake_object_order_depends_target_analise_credito_lib
+  DEP_FILE = CMakeFiles/analise_credito_lib.dir/credito.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/analise_credito_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles/analise_credito_lib.dir
+
+build CMakeFiles/analise_credito_lib.dir/fraude.cpp.o: CXX_COMPILER__analise_credito_lib_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/fraude.cpp || cmake_object_order_depends_target_analise_credito_lib
+  DEP_FILE = CMakeFiles/analise_credito_lib.dir/fraude.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/analise_credito_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles/analise_credito_lib.dir
+
+build CMakeFiles/analise_credito_lib.dir/score.cpp.o: CXX_COMPILER__analise_credito_lib_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/score.cpp || cmake_object_order_depends_target_analise_credito_lib
+  DEP_FILE = CMakeFiles/analise_credito_lib.dir/score.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/analise_credito_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles/analise_credito_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target analise_credito_lib
+
+
+#############################################
+# Link the static library libanalise_credito_lib.a
+
+build libanalise_credito_lib.a: CXX_STATIC_LIBRARY_LINKER__analise_credito_lib_Debug CMakeFiles/analise_credito_lib.dir/pessoa.cpp.o CMakeFiles/analise_credito_lib.dir/credito.cpp.o CMakeFiles/analise_credito_lib.dir/fraude.cpp.o CMakeFiles/analise_credito_lib.dir/score.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/analise_credito_lib.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libanalise_credito_lib.a
+  TARGET_PDB = analise_credito_lib.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target analise-credito-cpp
 
 
 #############################################
 # Order-only phony target for analise-credito-cpp
 
-build cmake_object_order_depends_target_analise-credito-cpp: phony || .
+build cmake_object_order_depends_target_analise-credito-cpp: phony || cmake_object_order_depends_target_analise_credito_lib
 
 build CMakeFiles/analise-credito-cpp.dir/main.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/main.cpp || cmake_object_order_depends_target_analise-credito-cpp
   DEP_FILE = CMakeFiles/analise-credito-cpp.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
-  OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
-
-build CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/pessoa.cpp || cmake_object_order_depends_target_analise-credito-cpp
-  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
-  OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
-
-build CMakeFiles/analise-credito-cpp.dir/credito.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/credito.cpp || cmake_object_order_depends_target_analise-credito-cpp
-  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/credito.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
-  OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
-
-build CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/fraude.cpp || cmake_object_order_depends_target_analise-credito-cpp
-  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
-  OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
-
-build CMakeFiles/analise-credito-cpp.dir/score.cpp.o: CXX_COMPILER__analise-credito-cpp_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/score.cpp || cmake_object_order_depends_target_analise-credito-cpp
-  DEP_FILE = CMakeFiles/analise-credito-cpp.dir/score.cpp.o.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   OBJECT_FILE_DIR = CMakeFiles/analise-credito-cpp.dir
 
@@ -87,13 +117,54 @@ build CMakeFiles/analise-credito-cpp.dir/score.cpp.o: CXX_COMPILER__analise-cred
 #############################################
 # Link the executable analise-credito-cpp
 
-build analise-credito-cpp: CXX_EXECUTABLE_LINKER__analise-credito-cpp_Debug CMakeFiles/analise-credito-cpp.dir/main.cpp.o CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o CMakeFiles/analise-credito-cpp.dir/credito.cpp.o CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o CMakeFiles/analise-credito-cpp.dir/score.cpp.o
+build analise-credito-cpp: CXX_EXECUTABLE_LINKER__analise-credito-cpp_Debug CMakeFiles/analise-credito-cpp.dir/main.cpp.o | libanalise_credito_lib.a || libanalise_credito_lib.a
   FLAGS = -g
+  LINK_LIBRARIES = libanalise_credito_lib.a
   OBJECT_DIR = CMakeFiles/analise-credito-cpp.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = analise-credito-cpp
   TARGET_PDB = analise-credito-cpp.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target run_test
+
+
+#############################################
+# Order-only phony target for run_test
+
+build cmake_object_order_depends_target_run_test: phony || cmake_object_order_depends_target_analise_credito_lib
+
+build CMakeFiles/run_test.dir/score_test.cpp.o: CXX_COMPILER__run_test_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/score_test.cpp || cmake_object_order_depends_target_run_test
+  DEP_FILE = CMakeFiles/run_test.dir/score_test.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/run_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/run_test.dir
+
+build CMakeFiles/run_test.dir/credito_test.cpp.o: CXX_COMPILER__run_test_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/credito_test.cpp || cmake_object_order_depends_target_run_test
+  DEP_FILE = CMakeFiles/run_test.dir/credito_test.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/run_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/run_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target run_test
+
+
+#############################################
+# Link the executable run_test
+
+build run_test: CXX_EXECUTABLE_LINKER__run_test_Debug CMakeFiles/run_test.dir/score_test.cpp.o CMakeFiles/run_test.dir/credito_test.cpp.o | libanalise_credito_lib.a /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a /usr/local/lib/libgmock.a /usr/local/lib/libgtest.a || libanalise_credito_lib.a
+  FLAGS = -g
+  LINK_LIBRARIES = libanalise_credito_lib.a  /usr/local/lib/libgtest_main.a  /usr/local/lib/libgtest.a  /usr/local/lib/libgmock.a  -lpthread  /usr/local/lib/libgtest.a
+  OBJECT_DIR = CMakeFiles/run_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = run_test
+  TARGET_PDB = run_test.dbg
 
 
 #############################################
@@ -164,6 +235,8 @@ build install/strip: phony CMakeFiles/install/strip.util
 # =============================================================================
 # Target aliases.
 
+build analise_credito_lib: phony libanalise_credito_lib.a
+
 # =============================================================================
 # Folder targets.
 
@@ -172,7 +245,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 #############################################
 # Folder: /home/luisrjbr/aulac++/analise-credito-cpp/build/Desktop-Debug
 
-build all: phony analise-credito-cpp
+build all: phony libanalise_credito_lib.a analise-credito-cpp run_test
 
 # =============================================================================
 # Built-in targets
@@ -181,14 +254,14 @@ build all: phony analise-credito-cpp
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | .qtc/package-manager/auto-setup.cmake /home/luisrjbr/aulac++/analise-credito-cpp/CMakeLists.txt /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | .qtc/package-manager/auto-setup.cmake /home/luisrjbr/aulac++/analise-credito-cpp/CMakeLists.txt /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindGTest.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindThreads.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/GoogleTest.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/GTest/GMockTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GMockTargets.cmake /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build .qtc/package-manager/auto-setup.cmake /home/luisrjbr/aulac++/analise-credito-cpp/CMakeLists.txt /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake: phony
+build .qtc/package-manager/auto-setup.cmake /home/luisrjbr/aulac++/analise-credito-cpp/CMakeLists.txt /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindGTest.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/FindThreads.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/GoogleTest.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU-CXX.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux.cmake /opt/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/UnixPaths.cmake /usr/local/lib/cmake/GTest/GMockTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GMockTargets.cmake /usr/local/lib/cmake/GTest/GTestConfig.cmake /usr/local/lib/cmake/GTest/GTestConfigVersion.cmake /usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake /usr/local/lib/cmake/GTest/GTestTargets.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake: phony
 
 
 #############################################

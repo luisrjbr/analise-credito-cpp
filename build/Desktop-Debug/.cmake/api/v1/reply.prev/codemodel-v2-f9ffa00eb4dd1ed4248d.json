@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-0be2003d8ae1596168e6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "analise-credito-cpp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "analise-credito-cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-analise-credito-cpp-Debug-84feafafc6bc1f1b4778.json",
+					"name" : "analise-credito-cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "analise_credito_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-analise_credito_lib-Debug-b6cdd136590b5ec5d853.json",
+					"name" : "analise_credito_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_test-Debug-a6ffd30108b1a072f585.json",
+					"name" : "run_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/luisrjbr/aulac++/analise-credito-cpp/build/Desktop-Debug",
+		"source" : "/home/luisrjbr/aulac++/analise-credito-cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

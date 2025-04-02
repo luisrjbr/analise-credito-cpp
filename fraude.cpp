@@ -12,13 +12,10 @@ bool Fraude::validarRegras() noexcept
     //cria uma lista fake de pessoas com produtos contratados
     listarPessoasComFraude();
 
-    if (pessoasComFraude.empty() && pessoasComFraude.size() == 0)
+    for(const CppPessoa::Pessoa& p : pessoasComFraude)
     {
-        for(const CppPessoa::Pessoa& p : pessoasComFraude)
-        {
-            if (p.obterCpf() == pessoaParaAnaliseFraude.obterCpf())
-                return true;
-        }
+        if (p.obterCpf() == pessoaParaAnaliseFraude.obterCpf())
+            return true;
     }
 
     return false;

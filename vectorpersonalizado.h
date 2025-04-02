@@ -13,6 +13,7 @@ class VectorPersonalizado
 public:
     using iterator = VectorPersonalizadoConstIterator<T>;
 
+
     //corrige a regra dos 3
     VectorPersonalizado() = default;
 
@@ -88,7 +89,6 @@ public:
         return *this;
     }
 
-
     constexpr void clear()
     {
         delete []m_data;
@@ -123,8 +123,8 @@ public:
 
             for(std::size_t i = 0; i < m_size; ++i)
             {
-                //se ele pode ser movido
-                if(std::is_move_constructible<T>())
+                //constexpr resolve em tempo de compilação e teste se ele pode ser movido
+                if constexpr (std::is_move_constructible<T>())
                 {
                     newData[i] = std::move(m_data[i]);
                 }

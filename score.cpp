@@ -5,31 +5,27 @@ namespace CppMasterClass::Credito
 {
     ScoreDeRisco Score::calcularScore(CppPessoa::Pessoa& pessoa) noexcept
     {
-        bool temRisco = false;
+        int idade = pessoa.obterIdade();
+        double renda = pessoa.obterRenda();
 
-        temRisco = (pessoa.obterIdade() >=18 && pessoa.obterIdade() <=30) &&
-               (pessoa.obterRenda() >2000 && pessoa.obterRenda() <= 10000);
+        if(idade >=18 && idade <=30)
+        {
+            if (renda >2000 && renda <=10000)
+                return ScoreDeRisco::ALTO;
 
-        if (temRisco)
-            return ScoreDeRisco::ALTO;
+            if(renda >= 10000)
+                return ScoreDeRisco::MEDIO;
+        }
+        else if(pessoa.obterIdade() >30 && pessoa.obterIdade() <=60)
+        {
+            if(renda > 2000 && renda <=10000)
+                return ScoreDeRisco::MEDIO;
 
-        temRisco = (pessoa.obterIdade() >=18 && pessoa.obterIdade() <=30) &&
-                            (pessoa.obterRenda() >= 10000);
+            if(renda > 10000)
+                return ScoreDeRisco::BAIXO;
+        }
 
-        if (temRisco)
-            return ScoreDeRisco::MEDIO;
-
-        temRisco = (pessoa.obterIdade() >30 && pessoa.obterIdade() <=60) &&
-                        (pessoa.obterRenda() > 2000 && pessoa.obterRenda() <=10000);
-
-        if (temRisco)
-            return ScoreDeRisco::MEDIO;
-
-        temRisco = (pessoa.obterIdade() >30 && pessoa.obterIdade() <=60) &&
-                        (pessoa.obterRenda() > 10000);
-
-        if (temRisco)
-            return ScoreDeRisco::BAIXO;
+        return ScoreDeRisco::INDEFINIDO;
     }
 }
 

@@ -11,14 +11,15 @@ namespace CppMasterClass::Credito
 
 enum class ScoreDeRisco
 {
-    ALTO, MEDIO, BAIXO
+    ALTO, MEDIO, BAIXO, INDEFINIDO
 };
 
 
 class Score
 {
 public:
-    Score();
+    Score() = default;
+    virtual ~Score() = default; // <---- destrutor virtual
 
     //
 

@@ -77,7 +77,8 @@ int main()
     CppContainers::ContainersFuncoes containerFunc;
     CppContainers::VectorPersonalizado<int> vecInt(100000);
 
-    auto totalVec = containerFunc.performanceTest2<CppContainers::VectorPersonalizado<int>>(100000);
+    auto totalVec = containerFunc.performanceTest<CppContainers::VectorPersonalizado<int>>(100000);
+    auto totalVec2 = containerFunc.performanceTest2<CppContainers::VectorPersonalizado<int>>(100000);
 
 
     //semântica Move, passa como uma referência rvalue, captura e manipula valores temporários
@@ -85,7 +86,10 @@ int main()
 
     std::cout << "\n-------------------------------------------" << std::endl;
     std::cout << "\nTestes de Performance: " << std::endl;
+    std::cout << "\nPreformance 1: " << std::endl;
     std::cout << totalVec << std::endl;
+    std::cout << "\nPreformance 2: " << std::endl;
+    std::cout << totalVec2 << std::endl;
     std::cout << "\n-------------------------------------------" << std::endl;
 
 

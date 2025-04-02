@@ -25,6 +25,7 @@ class Credito
 {
 public:
     Credito();
+    virtual ~Credito() = default; // <--- adicionando destrutor virtual
 
     //
     std::string mensagemRegrasPreCredito = "";
@@ -43,7 +44,7 @@ public:
     float obterNumeroParcelasDoCredito() noexcept;
     const Score& obterScore() const { return *m_score; }
 
-private:
+protected:
     std::unique_ptr<Score> m_score;
 
 };

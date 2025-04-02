@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/analise-credito-cpp.dir/main.cpp.o" "CMakeFiles/analise-credito-cpp.dir/pessoa.cpp.o" "CMakeFiles/analise-credito-cpp.dir/credito.cpp.o" "CMakeFiles/analise-credito-cpp.dir/fraude.cpp.o" "CMakeFiles/analise-credito-cpp.dir/score.cpp.o" -o analise-credito-cpp 
