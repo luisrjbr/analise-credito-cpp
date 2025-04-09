@@ -62,6 +62,8 @@ find_package(GTest REQUIRED)
 add_executable(run_test
     score_test.cpp
     credito_test.cpp
+    fraude_test.cpp
+    pessoa_test.cpp
     # Se quiser ver .h no run_test também, adicione-os aqui:
     # ${HEADER_FILES}
 )

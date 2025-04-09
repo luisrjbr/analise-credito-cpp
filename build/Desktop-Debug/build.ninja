@@ -149,6 +149,20 @@ build CMakeFiles/run_test.dir/credito_test.cpp.o: CXX_COMPILER__run_test_unscann
   OBJECT_DIR = CMakeFiles/run_test.dir
   OBJECT_FILE_DIR = CMakeFiles/run_test.dir
 
+build CMakeFiles/run_test.dir/fraude_test.cpp.o: CXX_COMPILER__run_test_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/fraude_test.cpp || cmake_object_order_depends_target_run_test
+  DEP_FILE = CMakeFiles/run_test.dir/fraude_test.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/run_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/run_test.dir
+
+build CMakeFiles/run_test.dir/pessoa_test.cpp.o: CXX_COMPILER__run_test_unscanned_Debug /home/luisrjbr/aulac++/analise-credito-cpp/pessoa_test.cpp || cmake_object_order_depends_target_run_test
+  DEP_FILE = CMakeFiles/run_test.dir/pessoa_test.cpp.o.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always -DGTEST_HAS_PTHREAD=1
+  INCLUDES = -I/home/luisrjbr/aulac++/analise-credito-cpp
+  OBJECT_DIR = CMakeFiles/run_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/run_test.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target run_test
@@ -157,7 +171,7 @@ build CMakeFiles/run_test.dir/credito_test.cpp.o: CXX_COMPILER__run_test_unscann
 #############################################
 # Link the executable run_test
 
-build run_test: CXX_EXECUTABLE_LINKER__run_test_Debug CMakeFiles/run_test.dir/score_test.cpp.o CMakeFiles/run_test.dir/credito_test.cpp.o | libanalise_credito_lib.a /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a /usr/local/lib/libgmock.a /usr/local/lib/libgtest.a || libanalise_credito_lib.a
+build run_test: CXX_EXECUTABLE_LINKER__run_test_Debug CMakeFiles/run_test.dir/score_test.cpp.o CMakeFiles/run_test.dir/credito_test.cpp.o CMakeFiles/run_test.dir/fraude_test.cpp.o CMakeFiles/run_test.dir/pessoa_test.cpp.o | libanalise_credito_lib.a /usr/local/lib/libgtest_main.a /usr/local/lib/libgtest.a /usr/local/lib/libgmock.a /usr/local/lib/libgtest.a || libanalise_credito_lib.a
   FLAGS = -g
   LINK_LIBRARIES = libanalise_credito_lib.a  /usr/local/lib/libgtest_main.a  /usr/local/lib/libgtest.a  /usr/local/lib/libgmock.a  -lpthread  /usr/local/lib/libgtest.a
   OBJECT_DIR = CMakeFiles/run_test.dir

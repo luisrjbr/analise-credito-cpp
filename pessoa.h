@@ -74,10 +74,10 @@ public:
 
 private:
     bool m_pessoavalida : 1 {false};
-    std::string m_cpf;
+    std::string m_cpf = "";
     char* m_cpfConvertido;
-    double m_renda;
-    uint8_t m_idade : 7;
+    double m_renda = 0.0;
+    uint8_t m_idade : 7 = 0;
 };
 
 //Sobrescreve o operador << para ter uma mensagem de saida padrão com informações do usuário

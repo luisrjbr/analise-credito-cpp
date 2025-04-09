@@ -11,7 +11,7 @@ namespace CppMasterClass::Credito
 
 enum class ScoreDeRisco
 {
-    ALTO, MEDIO, BAIXO, INDEFINIDO
+    ALTO, MEDIO, BAIXO, INDEFINIDO, DADOS_INVALIDOS
 };
 
 
@@ -21,9 +21,10 @@ public:
     Score() = default;
     virtual ~Score() = default; // <---- destrutor virtual
 
-    //
+    ScoreDeRisco calcularScore(const CppPessoa::Pessoa &Pessoa) const noexcept;
 
-    ScoreDeRisco calcularScore(CppPessoa::Pessoa &Pessoa) noexcept;
+private:
+    bool validarDados(int idade, double renda) const;
 
 };
 
